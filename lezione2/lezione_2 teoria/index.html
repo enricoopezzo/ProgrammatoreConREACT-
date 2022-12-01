@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tabella</h1>
+    <table border="1">
+        <caption><strong>Mia Tabella</strong></caption>
+        <tr>
+            <th rowspan="2">abc</th>
+            <th>abc</th>
+            <th>abc</th>
+        </tr>
+        <tr>
+            <td>abc</td>
+            <td>abc</td>
+        </tr>
+        <tr>
+            <th colspan="3">abc</th>
+        </tr>
+    </table>
+
+    <table border="1">
+        <caption><strong>Mia Tabella</strong></caption>
+        <thead>
+            <tr>
+                <th>abc</th>
+                <th>abc</th>
+                <th>abc</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">abc</td>
+                <td>abc</td>
+                <td>abc</td>
+            </tr>
+            <tr>
+
+                <td>abc</td>
+                <td>abc</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="3">abc</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr />
+    <h1>Form</h1>
+    <form>
+        <fieldset>
+            <legend>Mio Form</legend>
+            <label for="myname">Nome:</label>
+            <input type="text" id="myname" name="myname" placeholder="Mario..." minlength="3" required>
+        </fieldset>
+    </form>
+
+</body>
+</html>
