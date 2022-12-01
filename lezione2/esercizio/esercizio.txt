@@ -1,4 +1,5 @@
-L'esercizio prevede la creazione di un layout in HTML per una pagina adatta a contenere i post di un blog. Andranno create le aree semantiche di struttura ed andrà impaginato il contenuto.
+L'esercizio prevede la creazione di un layout in HTML per una pagina adatta a contenere i post di un blog. 
+Andranno create le aree semantiche di struttura ed andrà impaginato il contenuto.
 E' consigliato progettare in anticipo la corretta assegnazione dei tag e dei contenitori adatti all'uso.
 
 ###
@@ -34,6 +35,7 @@ Contenuti di intestazione del tag <header>
 Contenuti centrali variabili del tag <main> (corpo principale)
 Contenuti di fine pagina comuni, da inserire nel tag <footer>
 Formattazione del codice
+
 Il testo dell'articolo dovrà essere formattato per identificare tutte le parti da selezionare con i CSS. Perciò i passi saranno:
 
 Progettare su carta il markup finale, assegnando ad ogni specifico testo il tag appropriato
