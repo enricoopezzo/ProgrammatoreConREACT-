@@ -1,8 +1,10 @@
 Formattare una pagina con i CSS
 
-L'esercizio è mirato a prendere confidenza con i CSS per ricreare, per quanto possibile, ogni dettaglio (spazi, colori, grandezze, allineamenti, ecc.) 
+L'esercizio è mirato a prendere confidenza con i CSS per ricreare, per quanto possibile, 
+ogni dettaglio (spazi, colori, grandezze, allineamenti, ecc.) 
 presente nel semplice modello grafico «layout-curriculum.png». 
-Il layout è stato creato per dispositivi mobili ed andrà testato solo su schermi piccoli (fino a circa 450px-500px).
+Il layout è stato creato per dispositivi mobili ed andrà testato 
+solo su schermi piccoli (fino a circa 450px-500px).
 
 Viene ripreso il file "curriculum.html", realizzato in una precedente esercitazione. 
 Il markup originale di quel file è stato ritoccato ed integrato con alcuni contenitori semantici per permettere una migliore organizzazione dei contenuti 
