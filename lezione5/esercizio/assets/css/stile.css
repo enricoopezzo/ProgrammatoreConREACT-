@@ -332,3 +332,40 @@ footer a {
     }
 }
 
+
+/* Soluzione esercizio */
+@media screen and (min-width:500px) {
+    header div {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+aside .wrapper {
+    background-color: #fff;
+    border: 0;
+}
+
+@media screen and (min-width:500px) and (max-width:800px) {
+    aside .wrapper {
+        display: flex;
+    }
+
+    aside .wrapper div {
+        flex-basis: 30%;
+    }
+
+    aside .wrapper div:not(:last-child) {
+        margin-right: 5%;
+    }
+}
+
+@media screen and (min-width:800px) {
+    main {
+        display: flex;
+    }
+
+    main article {
+        flex-basis: 70%;
+    }
+}
