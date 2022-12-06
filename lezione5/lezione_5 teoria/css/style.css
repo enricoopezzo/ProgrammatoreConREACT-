@@ -5,15 +5,41 @@ body {
 
 .container {
     width: 70%;
+    min-height: 1200px;
     background-color: #fff;
     margin: 0 auto;
     padding: 1em;
     box-sizing: content-box;
-    position: relative;
+    /* position: relative; */
+}
+
+.container header {
+    background-color:#bcfcff;
+    padding: 1em;
+    margin-bottom: 1em;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul li a:link {
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #000;
+    color: #bcfcff;
 }
 
 div {
-    width: 50%;
+    /* width: 50%; */
     padding: 1em;
     box-sizing: border-box;
 }
@@ -21,6 +47,7 @@ div {
 div.box1 {
     background-color: lightgrey;
     float:left;
+    width: 50%;
 }
 
 div img {
@@ -34,11 +61,13 @@ div.box1 img {
 
 div.box2 img {
     float:left;
+    
 }
 
 div.box2 {
     background-color: lightcoral;
     float:left;
+    width: 50%;
 }
 
 .clear {
@@ -47,7 +76,7 @@ div.box2 {
 
 footer {
     background-color: black;
-    /* min-height: 100px; */
+    min-height: 800px;
     padding: 1em;
     color: #fff;
     text-align: center;
@@ -73,4 +102,45 @@ footer a:link, footer a:visited {
 h1 {
     position: relative;
     z-index: 12;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: space-between
+}
+
+.flex1 {
+    width: 250px;
+    
+    background-color: lightgreen;
+}
+
+.flex2 {
+    width: 250px;
+    flex-grow: 2;
+    background-color: lightcyan;
+}
+
+.flex3 {
+    width: 250px;
+    
+    background-color: lightpink;
+}
+.flex4 {
+    width: 300px;
+    background-color: lightgoldenrodyellow;
+}
+
+.flex5 {
+    width: 300px;
+    background-color: lightseagreen;
+}
+
+.flex6 {
+    width: 300px;
+    background-color: lightslategray;
 }
