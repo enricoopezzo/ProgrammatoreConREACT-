@@ -1,8 +1,8 @@
-/* alert('Ciao a tutti!!');
+alert('Ciao a tutti!!');
 console.log('Ciao a tutti!!');
 document.write('Ciao a tutti!!');
-prompt("Inserisci il nome");
-confirm('Ti piace Javascript?'); */
+let p = prompt("Inserisci il nome");
+let c = confirm('Ti piace Javascript?');
 
 // Variabili
 
@@ -44,7 +44,7 @@ var pippo = 'Sono pippo';
 // console.log(testLocale); // output: Sono locale al blocco
 
 var testo = "Sono Globale!";
-function x(){
+function func(){
     console.log(testo); // undefined
     testo = "Sono Globale!!!";
     console.log(testo); // Sono Globale!!!
@@ -59,7 +59,7 @@ function x(){
         console.log(testo); // Sono locale a innerFunc
     }innerFunc()
     console.log(testo); // Sono locale al blocco
-}x();
+}func();
 
 
 console.log(testo); // Sono Globale!
