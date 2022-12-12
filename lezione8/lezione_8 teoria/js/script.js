@@ -4,6 +4,9 @@ document.write('Ciao a tutti!!');
 let p = prompt("Inserisci il nome");
 let c = confirm('Ti piace Javascript?');
 
+
+document.write('Ciao a tutti!! <br>');
+
 // Variabili
 
 var test; // Dichiarazione di Variabile
