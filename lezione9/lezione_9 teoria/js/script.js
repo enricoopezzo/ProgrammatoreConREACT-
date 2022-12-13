@@ -147,3 +147,11 @@ arr.shift(); // toglie un elemento dall'inizio
 arr.splice(1, 0, 'add', 'ciao', 'uno')
 
 console.log(arr);
+
+
+// Operatore Ternario
+// let x = (condizione) ? 'valore a' : 'valore b';
+
+// Strutto di controllo if/else
+// if(condizione) { // esegui queste istruzioni } 
+// else { // esegui queste istruzioni }
