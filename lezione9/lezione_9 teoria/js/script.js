@@ -8,8 +8,6 @@ let y = (x > 18) ? 'Maggiorenne' : 'Minorenne';
 
 // Funzioni
 
-
-
 // Dichiarazioni di funzione
 function func1() {
     // corpo della funzione
