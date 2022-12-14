@@ -1,4 +1,5 @@
-Dovrai creare un file js e intregrarlo in un file di progetto (fai attenzione alla giusta creazione delle cartelle):
+Dovrai creare un file js e intregrarlo in un file di progetto 
+(fai attenzione alla giusta creazione delle cartelle):
 
 Richiamare la data attuale
 Mostrarla in una pagina HTML

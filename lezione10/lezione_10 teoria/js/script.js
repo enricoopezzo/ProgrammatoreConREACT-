@@ -221,23 +221,22 @@ for (const ele of myarr) {
     //console.log(ele);
 }
 
-myarr.forEach((ele, index) => console.log(index,ele))
+// myarr.forEach((ele, index) => console.log(index,ele))
 
 myarr.forEach((ele, index) => {
     const i = index;
     const e = ele;
-    console.log(i,e); 
-})
-
-let colonna = '';
+    //console.log(i,e); 
+});
 
 for(let i = 0; i < 10; i++) {
-    //colonna += '*';
-    riga = '';
+    let riga = '';
     for(let j = 0; j < 10; j++) {
         riga += '*';
     }
-    console.log(riga);
+    // console.log(riga);
 }
 
-//console.log(colonna);
+
+
+
