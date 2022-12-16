@@ -64,10 +64,10 @@ let arr = [
 ];
 
 let j = JSON.stringify(arr);
-console.log(j);
+//console.log(j);
 
 let arrObj = JSON.parse(j);
-console.log(arrObj);
+//console.log(arrObj);
 
 
 // Ajax format
@@ -189,15 +189,15 @@ console.log(users); */
 
 
 // GET Fetch
-url = 'https://jsonplaceholder.typicode.com/users/';
+/* url = 'https://jsonplaceholder.typicode.com/users/';
 fetch(url, {method: 'GET'})
     .then(response => response.json())
     .then(json => console.log(json))
-    .catch(err => alert(err.message))
+    .catch(err => alert(err.message)) */
 
 // POST fetch
 
-let u = { 
+/* let u = { 
     email : "m.rossi@gmail.com",
     name : "Mario Rossi",
     phone : "1-770-736-8031 x56442",
@@ -213,11 +213,11 @@ fetch(url, {
     }})
     .then(response => response.json())
     .then(json => console.log(json))
-    .catch(err => alert(err.message))
+    .catch(err => alert(err.message)) */
 
 // PUT fetch
 
-fetch(url+2, { 
+/* fetch(url+2, { 
             method: 'PUT', 
             body: JSON.stringify(u),
             headers: {
@@ -225,10 +225,10 @@ fetch(url+2, {
     }})
     .then(response => response.json())
     .then(json => console.log(json))
-    .catch(err => alert(err.message))
+    .catch(err => alert(err.message)) */
 
 // PATCH fetch
-fetch(url+2, { 
+/* fetch(url+2, { 
             method: 'PATCH', 
             body: JSON.stringify({ email : "m.rossi@gmail.com" }),
             headers: {
@@ -236,14 +236,14 @@ fetch(url+2, {
     }})
     .then(response => response.json())
     .then(json => console.log(json))
-    .catch(err => alert(err.message))
+    .catch(err => alert(err.message)) */
 
 
 // DELETE fetch
-fetch(url+2, { method: 'DELETE'})
+/* fetch(url+2, { method: 'DELETE'})
     .then(response => response.json())
     .then(json => console.log(json))
-    .catch(err => alert(err.message))
+    .catch(err => alert(err.message)) */
 
 /* let p = fetch(url).then(response => response.json());
 
@@ -255,4 +255,63 @@ document.addEventListener('DOMContentLoaded', () => {
 }) */
 
 
+let entrate =   [99, 32, 61, 54, 10];
+let spese =     [65, 15, 61, 39, 9];
+
+//              [34, 17, 0, 15, 1]
+
+let residuo = [];
+
+for (let i = 0; i <entrate.length; i++) {
+    let r = entrate[i] - spese[i];
+    residuo.push(r);
+}
+
+
+let res = entrate.map((ele, i) => ele - spese[i])
+
+
+console.log(entrate);
+console.log(spese);
+console.log(residuo);
+console.log(res);
+
+
+let arrUsers = [
+    { 
+        id: 1,
+        name: 'Mario',
+        lastname: 'Super',
+        city: 'San Francisco'
+    }, {
+        id: 2,
+        name: 'John',
+        lastname: 'Smith',
+        city: 'London'
+    }, {
+        id: 3,
+        name: 'Mario',
+        lastname: 'Rossi',
+        city: 'Roma'
+    }
+];
+
+
+arrUsers.forEach(ele => console.log(ele) )
+
+let arrName = arrUsers.map(ele => ele.name + '!!!')
+console.log(arrName);
+
+let arrFilter = arrUsers.filter(ele => ele.name === 'Mario');
+console.log(arrFilter);
+
+let obj = arrUsers.find(ele => ele.id === 1);
+console.log(obj);
+
+let index = arrUsers.findIndex(ele => ele.id === 1);
+console.log(index);
+
+spese = [65, 15, 61, 39, 9];
+let tot = spese.reduce((acc, val) => acc+val , 0);
+console.log(tot);
 
