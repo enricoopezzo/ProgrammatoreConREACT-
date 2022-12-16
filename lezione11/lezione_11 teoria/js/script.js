@@ -180,6 +180,6 @@ console.dir(titH1);
 
 function pippo() {
     let inp = document.querySelector('#txt');
-    console.dir(inp);
+    console.dir(inp.value);
     //alert('click!!!!')
 }
