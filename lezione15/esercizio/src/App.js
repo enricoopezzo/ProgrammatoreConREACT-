@@ -1,6 +1,10 @@
 import './App.css';
-import AddFormComponent from './components/AddFormComponent';
-import MainComponent from './components/MainComponent';
+/* import Container from 'react-bootstrap/Container'; 
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col'; 
+*/
+import {Container, Row, Col} from 'react-bootstrap';
+import MyTable from './compnents/MyTable';
 
 let users = [
   {
@@ -27,13 +31,20 @@ let users = [
   }
 ]
 
+function click() {
+  console.log(users);
+}
+
 function App() {
   return (
-    <div className="container">
-      <h1 className="test">Mia App React</h1>
-      <AddFormComponent txt="Mia Props" />
-      <MainComponent userlist={users} txt="Mia Props" />
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <MyTable myUsers={users} myClick={click} myStr="Ciao" myNum={25} />
+        </Col>
+        <Col>1 of 1</Col>
+      </Row>
+    </Container>
   );
 }
 
