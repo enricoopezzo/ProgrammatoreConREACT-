@@ -1,54 +1,21 @@
 {
   "users": [
     {
-      "email": "jonusabu@mailinator.com",
-      "password": "$2a$10$v98CxnovC8S.Z6B759Anxue94ppY8B0FuDykwFRP0zPLh4Fx3b1ha",
-      "firstName": "Ignatius",
-      "lastName": "Winters",
-      "city": "London",
-      "age": "48",
-      "id": 1
-    },
-    {
-      "email": "safybagep@mailinator.com",
-      "password": "$2a$10$wIi7drahG0Ky9skRMSeFuevFjK2F1gY/rhlUzfWkMEva0d4cKwXmS",
-      "firstName": "Jenette",
-      "lastName": "West",
-      "city": "New York",
-      "age": "25",
-      "id": 2
-    },
-    {
-      "email": "dabasu@mailinator.com",
-      "password": "$2a$10$ryDitaAVeLbILLdnpcOoWeCs.SrqTrzMwYL8SO42Hq1bza/VhG2gG",
-      "firstName": "Chancellor",
-      "lastName": "Cooper",
+      "email": "example@example.com",
+      "password": "$2a$10$xBPbGxBCnAK9GI.ka0u5A.bH/BO79eKvWzZMqSwQnnH5fbfZtDcxS",
+      "firstName": "Umberto",
+      "lastName": "Emanuele",
       "city": "Roma",
-      "age": "56",
-      "id": 3
-    },
-    {
-      "email": "vegoce@mailinator.com",
-      "password": "$2a$10$BnABTJeCtiQiAM7AUqft4Oe0USEGNaAwZPu/dEg/I4YmGO1vxCP6S",
-      "firstName": "Samson",
-      "lastName": "Savage",
-      "city": "Napoli",
-      "age": "22",
-      "id": 4
+      "age": "44",
+      "id": 1
     }
   ],
   "posts": [
     {
-      "date": "2023-01-12T16:01:41.552Z",
-      "txt": "Testo di prova",
+      "date": "13/1/2023 - 11:20:13",
+      "txt": "Commodi lorem porro ",
       "userId": 1,
       "id": 1
-    },
-    {
-      "date": "2023-01-12T16:02:59.665Z",
-      "txt": "Testo di prova",
-      "userId": 3,
-      "id": 2
     }
   ]
 }

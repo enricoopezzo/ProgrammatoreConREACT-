@@ -43,13 +43,17 @@ export default function Update() {
 
     useEffect(() => {
         if(userLog && userLog.user.id === +id) {
-            axios.get('http://localhost:3000/users/'+id).then(response => console.log(response))
+            axios.get('http://localhost:3000/users/'+id, { 
+              headers: {"Authorization" : `Bearer ${userLog.accessToken}`} })
+            .then(response => console.log(response))
         } 
       }, [userLog])
 
       
     const saveUser = (obj) => {
-        axios.patch('http://localhost:3000/users/'+id, obj).then(response => 
+        axios.patch('http://localhost:3000/users/'+id, obj, { 
+          headers: {"Authorization" : `Bearer ${userLog.accessToken}`} })
+          .then(response => 
             navigate('/users')
         )
     }

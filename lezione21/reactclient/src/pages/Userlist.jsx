@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Button, Container, Table } from 'react-bootstrap'
+import { Button, Container, Modal, Table } from 'react-bootstrap'
 import { TrashFill, PencilSquare, ListCheck } from 'react-bootstrap-icons';
 
 export default function Userlist() {
@@ -9,6 +9,9 @@ export default function Userlist() {
     const navigate = useNavigate();
     const [userLog, setUserLog] = useState(null);
     const [userlist, setUserlist] = useState([]);
+    const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
 
     useEffect(() => {
         const userLogJson = localStorage.getItem('userLogin');
@@ -20,11 +23,21 @@ export default function Userlist() {
     }, [])
 
     useEffect(() => {
-        axios.get('http://localhost:3000/users').then(response => setUserlist(response.data))
-    }, [])
+        if(userLog) {
+        axios.get('http://localhost:3000/users',{ 
+            headers: {"Authorization" : `Bearer ${userLog.accessToken}`} })
+            .then(response => setUserlist(response.data))
+        }
+    }, [userLog])
 
-    const removeUser = (obj) => {
-        axios.delete('http://localhost:3000/users/'+obj.id).then();
+    const removeUser = () => {
+        axios.delete('http://localhost:3000/users/'+userLog.user.id,{ 
+            headers: {"Authorization" : `Bearer ${userLog.accessToken}`} })
+            .then(response => {
+                handleClose();
+                localStorage.removeItem('userLogin');
+                navigate('/login');
+            });
     }
 
     const updateUser = (obj) => {
@@ -56,9 +69,9 @@ export default function Userlist() {
             <td>{ele.age}</td>
             <td>{ele.city}</td>
             <td className="text-center">
-                {ele.id !== userLog.user.id ? <Button variant="outline-danger" className='btn-sm' onClick={() => removeUser(ele)}><TrashFill /></Button> : ''}
                 {ele.id === userLog.user.id ? (
                     <>
+                    <Button variant="outline-danger" className='btn-sm mx-1' onClick={() => setShow(true)}><TrashFill /></Button>
                     <Button variant="outline-warning" className='btn-sm mx-1' onClick={() => updateUser(ele)}><PencilSquare /></Button>
                     <Button variant="outline-secondary" className='btn-sm mx-1' onClick={() => navigate('/users/'+ele.id+'/posts')}><ListCheck /></Button>
                     </>
@@ -69,6 +82,13 @@ export default function Userlist() {
             
         </tbody>
         </Table>
+        <Modal show={show} onHide={handleClose}>
+            <Modal.Body>Sei sicuro che vuoi eliminare?</Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>No</Button>
+                <Button variant="primary" onClick={removeUser}>Si</Button>
+            </Modal.Footer>
+        </Modal>
     </Container>
     </>
   )
