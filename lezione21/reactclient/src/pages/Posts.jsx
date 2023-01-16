@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'
-import { Button, Col, Container, Form, ListGroup, Row } from 'react-bootstrap';
+import axios from 'axios';
+import { Button, Col,  Container,  Form, ListGroup, Row } from 'react-bootstrap';
 
 export default function Posts() {
 
@@ -24,7 +24,7 @@ export default function Posts() {
     }, [])
 
 
-    const savePost = (event) => {
+    const savePost = () => {
         let d = new Date();
         let p = { 
             date: `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()} - ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}` , 
@@ -40,9 +40,6 @@ export default function Posts() {
                 .then(response => setPosts(response.data))
             })
     }
-
-    
-    
 
   return (
     <>
