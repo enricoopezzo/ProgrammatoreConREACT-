@@ -8,9 +8,10 @@ export default function TableContatcs({store}) {
 
   //console.log(store.getState());
   const navigate = useNavigate();
-  const [contacts, setContacts] = useState();
+  const [contacts, setContacts] = useState([]);
 
   store.subscribe(() => {
+    console.log('store.subscribe');
     setContacts([...store.getState()])
   })
 

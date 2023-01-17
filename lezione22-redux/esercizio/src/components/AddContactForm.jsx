@@ -27,17 +27,18 @@ export default function AddContactForm({store}) {
   return (
       <Formik
         initialValues={{
-          firstName: "",
-          lastName: "",
-          city: "",
-          phone: "",
-          email: "",
-        }}
+        firstName: "",
+        lastName: "",
+        city: "",
+        phone: "",
+        email: "",
+      }}
         validationSchema={AddContactFormSchema}
-        onSubmit={(values) => {
+        onSubmit={(values, {resetForm}) => {
           // same shape as initial values
           //console.log(values);
           store.dispatch({type: 'ADD_CONTACT', contact: values})
+          resetForm();
         }}
       >
         {({ errors, touched }) => (
