@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "olivier@mail.com",
+      "password": "bestPassw0rd",
+      "firstname": "Olivier",
+      "lastname": "Monge",
+      "age": 32
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "fullname": "Mario Rossi",
+      "city": "Roma",
+      "email": "m.rossi@mail.com",
+      "phone": "555-1234"
+    },
+    {
+      "fullname": "Teagan Perry",
+      "city": "New York",
+      "email": "vive@mailinator.com",
+      "phone": "+1 (759) 819-6443",
+      "id": 2
+    }
+  ]
+}
