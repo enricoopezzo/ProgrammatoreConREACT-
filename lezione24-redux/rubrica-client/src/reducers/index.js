@@ -6,6 +6,11 @@ function storeRoducer(state=[], action) {
             return state.filter(ele => ele.id !== action.id)
         case "ADD_CONTACT":
             return [...state, action.contact]
+        case "UPDATE_CONTACT":
+            let prevState = Object.assign([], state);
+            let index = prevState.findIndex(ele => ele.id === action.contact.id);
+            prevState[index] = action.contact;
+            return [...prevState]
         default:
             return state
     }

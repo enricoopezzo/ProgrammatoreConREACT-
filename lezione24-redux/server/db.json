@@ -11,18 +11,18 @@
   ],
   "contacts": [
     {
-      "id": 1,
-      "fullname": "Mario Rossi",
-      "city": "Roma",
-      "email": "m.rossi@mail.com",
-      "phone": "555-1234"
-    },
-    {
       "fullname": "Teagan Perry",
       "city": "New York",
-      "email": "vive@mailinator.com",
+      "email": "teaganperry@mailinator.com",
       "phone": "+1 (759) 819-6443",
       "id": 2
+    },
+    {
+      "fullname": "Delilah Daniels",
+      "city": "Paris",
+      "email": "pulaj@mailinator.com",
+      "phone": "+1 (328) 561-5927",
+      "id": 3
     }
   ]
 }

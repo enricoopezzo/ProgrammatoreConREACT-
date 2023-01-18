@@ -32,7 +32,7 @@ function addContact(obj) {
 
 function updateContact(obj) {
     return function(dispatch) {
-        return axios.patch('http://localhost:3000/contacts/'+obj.id, obj)
+        return axios.put('http://localhost:3000/contacts/'+obj.id, obj)
         .then(response => {
             if(response.status !== 200) { throw new Error('Error: ' + response.status) }
             return dispatch({ type: "UPDATE_CONTACT", contact: response.data })
@@ -40,4 +40,4 @@ function updateContact(obj) {
     }
 }
 
-export  { getAllContacts, removeContact, addContact }
+export  { getAllContacts, removeContact, addContact, updateContact }
