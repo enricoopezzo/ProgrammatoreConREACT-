@@ -1,6 +1,7 @@
 import axios from "axios";
 
 function getAllContacts() {
+  /* const esempioDiToken = { headers: {"Authorization" : `Bearer ${userLog.accessToken}`} } */
   return function (dispatch) {
     return axios
       .get("http://localhost:3000/contacts")
