@@ -2,6 +2,9 @@ import React from 'react'
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { Button } from "react-bootstrap"
+import { connect } from "react-redux"
+import { register } from "../actions"
+import { useNavigate } from "react-router-dom";
 
 const RegisterSchema = Yup.object().shape({
     firstname: Yup.string().required("Required"),
@@ -11,7 +14,10 @@ const RegisterSchema = Yup.object().shape({
     password: Yup.string().required("Required")
   });
 
-export default function RegisterComponent() {
+function RegisterComponent({register}) {
+
+  const navigate = useNavigate();
+
   return (
     <div style={{width: "600px", textAlign: "center", margin: "auto"}}>
       <h1>Register</h1>
@@ -27,6 +33,8 @@ export default function RegisterComponent() {
         onSubmit={(values, { resetForm }) => {
           // same shape as initial values
           console.log(values);
+          register(values);
+          navigate('/login');
           resetForm();
         }}
       >
@@ -76,3 +84,5 @@ export default function RegisterComponent() {
     </div>
   )
 }
+
+export default connect(null, {register})(RegisterComponent)

@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AddContactForm from '../components/AddContactForm'
 import TableContacts from '../components/TableContacts'
+import { connect } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
-export default function ContactListPage() {
+const mapStateToProps = (state) => {
+  return { userLogin: state.userLogin} 
+}
+
+ function ContactListPage({userLogin}) {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(!userLogin) {
+      navigate('/login')
+    }
+  }, [])
+  
+
   return (
     <>
     <AddContactForm  />
@@ -10,3 +26,5 @@ export default function ContactListPage() {
     </>
   )
 }
+
+export default connect(mapStateToProps)(ContactListPage)

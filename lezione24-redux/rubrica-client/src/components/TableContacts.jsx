@@ -6,10 +6,10 @@ import { connect } from 'react-redux'
 import { getAllContacts, removeContact } from '../actions'
 
 const mapStateToProps = (state) => {
-  return { contacts: [...state] }
+  return { contacts: state.contacts} 
 }
 
-function TableContacts({contacts, getAllContacts, removeContact}) {
+function TableContacts({contacts, removeContact, getAllContacts}) {
 
   const navigate = useNavigate();
 

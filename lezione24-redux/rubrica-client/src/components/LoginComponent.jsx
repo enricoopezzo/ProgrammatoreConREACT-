@@ -2,13 +2,17 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { Button } from "react-bootstrap"
+import { connect } from 'react-redux'
+import { login } from '../actions'
+import { useNavigate } from "react-router-dom";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
   password: Yup.string().required("Required"),
 });
 
-export default function LoginComponent() {
+function LoginComponent({login}) {
+  const navigate = useNavigate();
   return (
     <div style={{width: "600px", textAlign: "center", margin: "auto"}}>
       <h1>Login</h1>
@@ -20,7 +24,9 @@ export default function LoginComponent() {
         validationSchema={LoginSchema}
         onSubmit={(values, { resetForm }) => {
           // same shape as initial values
-          console.log(values);
+          //console.log(values);
+          login(values);
+          navigate('/')
           resetForm();
         }}
       >
@@ -49,3 +55,5 @@ export default function LoginComponent() {
     </div>
   );
 }
+
+export default connect(null, {login})(LoginComponent)

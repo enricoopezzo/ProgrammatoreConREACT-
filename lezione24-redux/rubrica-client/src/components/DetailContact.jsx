@@ -6,7 +6,7 @@ import UpdateContactForm from './UpdateContactForm'
 import { updateContact } from '../actions'
 
 const mapStateToProps = (state) => {
-  return { contacts: [...state] }
+  return { contacts: state.contacts }
 }
 
 function DetailContact({contacts, updateContact}) {

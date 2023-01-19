@@ -9,9 +9,9 @@ import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
-
+const initialState = {contacts: [], userLogin: null}
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const store = createStore(storeRoducer, [], applyMiddleware(thunk));
+const store = createStore(storeRoducer, initialState, applyMiddleware(thunk));
 
 root.render(
   <React.StrictMode>

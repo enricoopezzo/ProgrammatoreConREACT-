@@ -1,8 +1,15 @@
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { logout } from '../actions'
 
-export default function HeaderNav() {
+const mapStateToProps = (state) => {
+  return { userLogin: state.userLogin } 
+}
+
+function HeaderNav({userLogin, logout}) {
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -12,12 +19,24 @@ export default function HeaderNav() {
           <Nav className="me-auto">
             <NavLink to="/contactlist" className="nav-link">Contacts</NavLink>
           </Nav>
-          <Nav>
-            <NavLink to="/login" className="nav-link">Login</NavLink>
-            <NavLink to="/register" className="nav-link">Register</NavLink>
-          </Nav>
+          
+          {!userLogin && (
+            <Nav>
+              <NavLink to="/login" className="nav-link">Login</NavLink>
+              <NavLink to="/register" className="nav-link">Register</NavLink>
+            </Nav>
+          )}
+          {userLogin && (
+            <Nav>
+              
+              <NavLink className="nav-link">Ciao {userLogin.user.firstname}</NavLink>
+              <NavLink to="/login" className="nav-link" onClick={logout}>Logout</NavLink>
+            </Nav>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
   )
 }
+
+export default connect(mapStateToProps, {logout})(HeaderNav)
