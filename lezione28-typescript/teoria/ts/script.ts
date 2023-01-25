@@ -349,7 +349,22 @@ function genFunc(x: any, y: any): any {
 } 
 */
 
-function genFunc<T, U>(x: T, y: U) { 
+/* function getFuncSol1(x: string, y: number): void {
+    console.log(x, y);
+}
+function getFuncSol2(x: boolean, y: string[]): void {
+    console.log(x, y);
+}
+function getFuncSol3(x: number, y: number): void {
+    console.log(x, y);
+}
+
+getFuncSol1('abc', 25);
+getFuncSol2(true, ['ciao']);
+getFuncSol3(5,10); */
+
+
+function genFunc<T, U>(x: T, y: U): void { 
     console.log(x, y); 
 }
 
@@ -357,17 +372,17 @@ genFunc<string, number>('abc', 25);
 genFunc<boolean, string[]>(true, ['ciao']);
 genFunc<number, number>(5,10);
 
-class GenericsClass<I> {
+class GenericsClass<I extends TestVeicolo, T, K> {
     param1!: I;
-    param2!: I;
-    param3!: I;
+    param2!: T;
+    param3!: K;
 }
 
-let objGenerics = new GenericsClass<string>()
-objGenerics.param1 = 'ciao';
+let objGenerics = new GenericsClass<TestAuto, number, boolean>()
+objGenerics.param1 = objTestAuto;
 
-let objGenerics2 = new GenericsClass<number>()
-objGenerics2.param1 = 25;
+let objGenerics2 = new GenericsClass<TestMoto, string, boolean>()
+objGenerics2.param1 = objTestMoto;
 
 
 // Generics nelle chiamate AJAX
