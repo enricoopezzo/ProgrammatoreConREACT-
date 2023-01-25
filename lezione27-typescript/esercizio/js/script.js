@@ -26,9 +26,10 @@ function printTodos() {
     }
     listaTodo.forEach((t, i) => {
         const li = document.createElement('li');
-        li.setAttribute('class', t.complete);
+        //li.setAttribute('class', t.complete)
+        li.className = t.complete + ' list-group-item d-flex justify-content-between';
         li.innerHTML = `${t.id} - ${t.txt} 
-                        <span>${t.data.getDate()}/${t.data.getMonth()}</span> 
+                        <span>${t.data.getDate()}/${t.data.getMonth() + 1}</span> 
                         <span>
                             <button type="button" class="btn btn-danger" onclick="removeTodo(${i})">x</button>
                             <button type="button" class="btn btn-warning" onclick="completeTodo(${i})">o</button>
@@ -41,6 +42,7 @@ function removeTodo(index) {
     printTodos();
 }
 function completeTodo(index) {
-    listaTodo[index].complete = 'complete';
+    const todo = listaTodo[index];
+    todo.complete = todo.complete === 'complete' ? '' : 'complete';
     printTodos();
 }

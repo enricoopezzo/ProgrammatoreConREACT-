@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function addTodo(): void {
-    const inputTodo = document.querySelector('#addTodo input') as HTMLInputElement
+    //const inputTodo = document.querySelector('#addTodo input') as HTMLInputElement
+    const inputTodo = <HTMLInputElement> document.querySelector('#addTodo input')
     listaTodo.push(new Todo(inputTodo?.value))
     printTodos();
 }
@@ -35,9 +36,10 @@ function printTodos(): void {
     
     listaTodo.forEach((t,i) => {
         const li = document.createElement('li')
-        li.setAttribute('class', t.complete)
+        //li.setAttribute('class', t.complete)
+        li.className = t.complete + ' list-group-item d-flex justify-content-between';
         li.innerHTML = `${t.id} - ${t.txt} 
-                        <span>${t.data.getDate()}/${t.data.getMonth()}</span> 
+                        <span>${t.data.getDate()}/${t.data.getMonth()+1}</span> 
                         <span>
                             <button type="button" class="btn btn-danger" onclick="removeTodo(${i})">x</button>
                             <button type="button" class="btn btn-warning" onclick="completeTodo(${i})">o</button>
@@ -52,6 +54,7 @@ function removeTodo(index: number): void {
 }
 
 function completeTodo(index: number): void {
-    listaTodo[index].complete = 'complete'
+    const todo = listaTodo[index];
+    todo.complete = todo.complete === 'complete' ? '' : 'complete'
     printTodos();
 }
